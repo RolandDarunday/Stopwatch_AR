@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F9F9"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <!-- Time Display -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:strokeColor="#EEEEEE"
+            app:strokeWidth="1dp">
+
+            <TextView
+                android:id="@+id/tvTimeDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00:00"
+                android:textSize="53dp"
+                android:textColor="#1A1A1A"
+                android:fontFamily="sans-serif-condensed"
+                android:textStyle="bold"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:background="@drawable/bg_time_display"
+                android:elevation="6dp"
+                android:shadowRadius="4"
+                android:shadowColor="#BBBBBB"
+                android:gravity="center"
+                android:letterSpacing="0.1"/>
+        </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+
+    <!-- Buttons Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="2"
+        android:layout_marginBottom="24dp">
+
+        <!-- Left Side Buttons -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingHorizontal="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStart"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Start"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                android:gravity="center"
+                app:backgroundTint="#4CAF50"
+                app:cornerRadius="32dp"
+                app:rippleColor="#A5D6A7"
+                android:layout_marginBottom="12dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPause"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Pause"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                android:gravity="center"
+                app:backgroundTint="#FF9800"
+                app:cornerRadius="32dp"
+                app:rippleColor="#FFE0B2"/>
+        </LinearLayout>
+
+        <!-- Right Side Buttons -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingHorizontal="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReset"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Reset"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                android:gravity="center"
+                app:backgroundTint="#F44336"
+                app:cornerRadius="32dp"
+                app:rippleColor="#EF9A9A"
+                android:layout_marginBottom="12dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLap"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Lap"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                android:gravity="center"
+                app:backgroundTint="#2196F3"
+                app:cornerRadius="32dp"
+                app:rippleColor="#BBDEFB"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Laps Section Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Laps"
+        android:textSize="20sp"
+        android:textColor="#424242"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Laps List -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="ifContentScrolls"
+        android:fadeScrollbars="false">
+
+        <LinearLayout
+            android:id="@+id/lapContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"/>
+    </ScrollView>
+
+    <!-- Watermark Text -->
+    <TextView
+        android:id="@+id/watermark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AR Stopwatch"
+        android:textSize="14sp"
+        android:textColor="#888888"
+        android:alpha="0.3"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>
